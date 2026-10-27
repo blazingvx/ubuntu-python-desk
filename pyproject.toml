@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ubuntu-python-desk"
+version = "0.1.0"
+description = "A starter desktop application built with Python and Tkinter."
+readme = "README.md"
+requires-python = ">=3.10"
+
+[project.scripts]
+ubuntu-python-desk = "ubuntu_python_desk.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

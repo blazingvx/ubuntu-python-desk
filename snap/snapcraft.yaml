@@ -1,0 +1,40 @@
+
+name: ubuntu-python-desk
+base: core26
+version: "0.1.0"
+summary: A starter Python desktop application
+description: |
+  Ubuntu Python Desk is a simple desktop application built
+  with Python and Tkinter.
+
+grade: stable
+confinement: strict
+
+apps:
+  ubuntu-python-desk:
+    command: bin/ubuntu-python-desk
+    plugs:
+      - desktop
+      - desktop-legacy
+      - wayland
+      - x11
+    environment:
+      TCL_LIBRARY: $SNAP/usr/share/tcltk/tcl8.6
+      TK_LIBRARY: $SNAP/usr/share/tcltk/tk8.6
+
+parts:
+  python-runtime:
+    plugin: nil
+    stage-packages:
+      - libpython3.14-minimal
+      - libpython3.14-stdlib
+      - python3-minimal
+      - python3.14-minimal
+      - python3.14-venv
+
+  ubuntu-python-desk:
+    after: [python-runtime]
+    plugin: python
+    source: .
+    stage-packages:
+      - python3-tk
