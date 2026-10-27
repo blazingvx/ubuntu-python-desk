@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Ubuntu Python Desk
+Comment=Ubuntu Python Desktop Application
+Exec=ubuntu-python-desk
+Icon=${SNAP}/meta/gui/ubuntu-python-desk.png
+Terminal=false
+Type=Application
+Categories=Utility;Development;

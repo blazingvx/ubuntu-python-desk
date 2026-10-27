@@ -1,4 +1,10 @@
 
+title: Ubuntu Python Desk
+license: MIT
+website: https://github.com/blazingvx/ubuntu-python-desk
+source-code: https://github.com/blazingvx/ubuntu-python-desk
+issues: https://github.com/blazingvx/ubuntu-python-desk/issues
+
 name: ubuntu-python-desk
 base: core26
 version: "0.1.0"
@@ -13,12 +19,16 @@ confinement: strict
 apps:
   ubuntu-python-desk:
     command: bin/ubuntu-python-desk
+    extensions:
+      - gnome
+    desktop: gui/ubuntu-python-desk.desktop
     plugs:
       - desktop
       - desktop-legacy
       - wayland
       - x11
     environment:
+      PYTHONHOME: $SNAP/usr
       TCL_LIBRARY: $SNAP/usr/share/tcltk/tcl8.6
       TK_LIBRARY: $SNAP/usr/share/tcltk/tk8.6
 
